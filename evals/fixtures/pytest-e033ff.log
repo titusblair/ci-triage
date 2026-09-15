@@ -1,0 +1,40 @@
+E           buffer (last 100 chars): b") p self.filename\r\n'debug.me'\r\n(Pdb) "
+E           before (last 100 chars): b") p self.filename\r\n'debug.me'\r\n(Pdb) "
+E           after: <class 'pexpect.exceptions.TIMEOUT'>
+E           match: None
+E           match_index: None
+E           exitstatus: None
+E           flag_eof: False
+E           pid: 7183
+E           child_fd: 16
+E           closed: False
+E           timeout: 10.0
+E           delimiter: <class 'pexpect.exceptions.EOF'>
+E           logfile: <_io.BufferedWriter name='/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/spawn.out'>
+E           logfile_read: None
+E           logfile_send: None
+E           maxread: 2000
+E           ignorecase: False
+E           searchwindowsize: None
+E           delaybeforesend: 0.05
+E           delayafterclose: 0.1
+E           delayafterterminate: 0.1
+E           searcher: searcher_re:
+E               0: EOF
+/home/runner/work/pytest/pytest/.tox/py310-xdist/lib/python3.10/site-packages/pexpect/expect.py:144: TIMEOUT
+=============================== warnings summary ===============================
+=================================== XPASSES ====================================
+-------- generated xml file: /home/runner/work/pytest/pytest/junit.xml ---------
+=========================== short test summary info ============================
+FAILED testing/test_debugging.py::TestPDB::test_pdb_unittest_postmortem - pexpect.exceptions.TIMEOUT: Timeout exceeded.
+<pexpect.pty_spawn.spawn object at 0x7f658617d030>
+command: /home/runner/work/pytest/pytest/.tox/py310-xdist/bin/python3
+args: ['/home/runner/work/pytest/pytest/.tox/py310-xdist/bin/python3', '-mpytest', '--basetemp=/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/temp-pexpect', '--pdb', '/tmp/pytest-of-runner/pytest-0/popen-gw2/test_pdb_unittest_postmortem0/test_pdb_unittest_postmortem.py']
+XPASS testing/test_debugging.py::test_pdb_suspends_fixture_capturing[capfd] - #10042
+XPASS testing/test_debugging.py::TestPDB::test_pdb_interaction_capturing_simple - #10042
+XPASS testing/test_debugging.py::test_pdb_suspends_fixture_capturing[capsys] - #10042
+= 1 failed, 4599 passed, 50 skipped, 13 xfailed, 7 xpassed, 2 warnings in 110.81s (0:01:50) =
+py310-xdist: exit 1 (111.94 seconds) /home/runner/work/pytest/pytest> pytest --junitxml=junit.xml -n auto pid=2523
+  py310-xdist: FAIL code 1 (119.84=setup[7.89]+cmd[111.94] seconds)
+  evaluation failed :( (119.96 seconds)
+##[error]Process completed with exit code 1.

@@ -1,0 +1,24 @@
+            dt = np.dtype([("v", "i4"), ("next", dt)])
+>       with pytest.raises(RecursionError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RecursionError
+_          = 49999
+dt         = <[RecursionError('maximum recursion depth exceeded') raised in repr()] VoidDType object at 0x53640a2f140>
+self       = <test_dtype.TestMonsterType object at 0x53636904750>
+numpy/_core/tests/test_dtype.py:962: Failed
+=================================== XPASSES ====================================
+============================= slowest 10 durations =============================
+10.35s setup    build-install/usr/lib/python3.15t/site-packages/numpy/_core/tests/test_cython.py::test_is_timedelta64_object
+SKIPPED [1] numpy/_core/tests/test_mem_policy.py:382: too slow, see gh-23975
+SKIPPED [1] numpy/_core/tests/test_numeric.py:248: Out of range of int32
+SKIPPED [1] numpy/_core/tests/test_multiarray.py:4240: BLAS does not support FPE
+SKIPPED [1] numpy/_core/tests/test_multiarray.py:5316: this tests the error messages when trying toprotocol 5 although it is not available
+SKIPPED [3] numpy/testing/_private/utils.py:2713: Could not determine available memory; set NPY_AVAILABLE_MEM environment variable (e.g. NPY_AVAILABLE_MEM=16GB) to run the test.
+SKIPPED [1] numpy/_core/tests/test_scalar_methods.py:68: long double is same as double
+SKIPPED [1] numpy/_core/tests/test_scalarmath.py:529: long double is same as double
+XFAIL numpy/tests/test_scripts.py::test_f2py[f2py3.15] - Test is unreliable
+XFAIL numpy/tests/test_scripts.py::test_f2py[f2py3] - Test is unreliable
+XPASS numpy/lib/tests/test_arraypad.py::TestLinearRamp::test_object_array
+FAILED numpy/_core/tests/test_dtype.py::TestMonsterType::test_nested_structured_dtype_zerofill_recursion - Failed: DID NOT RAISE RecursionError
+= 1 failed, 47230 passed, 1094 skipped, 69 xfailed, 1 xpassed in 104.92s (0:01:44) =
+##[error]Process completed with exit code 1.

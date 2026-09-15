@@ -1,0 +1,6 @@
++ uv run ruff format --check --diff starlette tests benchmarks
+99 files already formatted
++ uv run mypy starlette tests benchmarks
+starlette/middleware/_compression.py:79: error: Returning Any from function declared to return "bytes"  [no-any-return]
+Found 1 error in 1 file (checked 98 source files)
+##[error]Process completed with exit code 1.

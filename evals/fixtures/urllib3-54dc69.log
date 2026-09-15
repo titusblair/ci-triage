@@ -1,0 +1,40 @@
+    return (yield)
+            ^^^^^
+  File "D:\a\urllib3\urllib3\.nox\test-3-14\Lib\site-packages\pluggy\_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "D:\a\urllib3\urllib3\.nox\test-3-14\Lib\site-packages\pluggy\_callers.py", line 53, in run_old_style_hookwrapper
+    return result.get_result()
+    res = yield
+          ^^^^^
+  File "D:\a\urllib3\urllib3\.nox\test-3-14\Lib\site-packages\pluggy\_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "D:\a\urllib3\urllib3\.nox\test-3-14\Lib\site-packages\_pytest\skipping.py", line 268, in pytest_runtest_call
+    return (yield)
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\a\urllib3\urllib3\.nox\test-3-14\Lib\site-packages\pluggy\_callers.py", line 167, in _multicall
+    raise exception
+  File "D:\a\urllib3\urllib3\.nox\test-3-14\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "D:\a\urllib3\urllib3\.nox\test-3-14\Lib\site-packages\_pytest\python.py", line 167, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "D:\a\urllib3\urllib3\test\with_dummyserver\test_socketlevel.py", line 1961, in test_ssl_custom_validation_failure_terminates
+    assert server_closed.wait(LONG_TIMEOUT), "The socket was not terminated"
+AssertionError: The socket was not terminated
+assert False
+ +  where False = wait(0.5)
+ +    where wait = <threading.Event at 0x15bdfd4fe90: unset>.wait
+------------------------------ Captured log call ------------------------------
+XFAIL test/contrib/test_pyopenssl.py::TestHTTPS_TLSv1_3::test_http2_probe_result_failed[h11] - Hypercorn always supports both HTTP/2 and HTTP/1.1
+XFAIL test/with_dummyserver/test_https.py::TestHTTPS_TLSv1_2::test_http2_probe_result_failed[h11] - Hypercorn always supports both HTTP/2 and HTTP/1.1
+XFAIL test/with_dummyserver/test_https.py::TestHTTPS_TLSv1_3::test_http2_probe_result_failed[h11] - Hypercorn always supports both HTTP/2 and HTTP/1.1
+FAILED test/contrib/test_pyopenssl.py::TestSocketSSL::test_ssl_custom_validation_failure_terminates - AssertionError: The socket was not terminated
+assert False
+ +  where False = wait(0.5)
+ +    where wait = <threading.Event at 0x15bdfd4fe90: unset>.wait
+= 1 failed, 2350 passed, 314 skipped, 4 xfailed, 58 warnings in 176.17s (0:02:56) =
+nox > Command python -m coverage run --parallel-mode -m pytest -v -ra --tb=native --durations=10 --strict-config --strict-markers --disable-socket --allow-unix-socket --allow-hosts=localhost,127.0.0.1,::1,127.0.0.0,240.0.0.0 test/ failed with exit code 1
+nox > Session test-3.14 failed.
+##[error]Process completed with exit code 1.

@@ -1,0 +1,40 @@
+exact match: '    @pytest.mark.parametrise("x", range(2))'
+nomatch: "E   Failed: Unknown 'parametrise' mark, did you mean 'parametrize'?"
+    and: '     ^^^^^^^^^^^^^^^^^^^^^^^'
+exact match: "E   Failed: Unknown 'parametrise' mark, did you mean 'parametrize'?"
+nomatch: '*! Interrupted: 1 error during collection !*'
+    and: '=========================== short test summary info ==========================='
+    and: "ERROR test_parametrize_misspelling.py - Failed: Unknown 'parametrise' mark, d..."
+    and: '!!!!!!!!!!!!!! CollectionInterrupted: 1 error during collection !!!!!!!!!!!!!!!'
+    and: '==================== no tests collected, 1 error in 0.06s ====================='
+remains unmatched: '*! Interrupted: 1 error during collection !*'
+FAILED testing/python/metafunc.py::TestHiddenParam::test_multiple_hidden_param_is_forbidden - Failed: nomatch: 'collected 0 items / 1 error'
+    and: '============================= test session starts ============================='
+    and: 'platform win32 -- Python 3.15.0rc2, pytest-9.2.0.dev297+g5619aa87c, pluggy-1.6.0'
+    and: 'rootdir: C:\\Users\\runneradmin\\AppData\\Local\\Temp\\pytest-of-unknown\\pytest-0\\test_multiple_hidden_param_is_forbidden0'
+exact match: 'collected 0 items / 1 error'
+exact match: ''
+fnmatch: '*= ERRORS =*'
+   with: '=================================== ERRORS ===================================='
+fnmatch: '*_ ERROR collecting test_multiple_hidden_param_is_forbidden.py _*'
+   with: '_________ ERROR collecting test_multiple_hidden_param_is_forbidden.py _________'
+nomatch: 'E   Failed: In test_multiple_hidden_param_is_forbidden.py::test_func: multiple instances of HIDDEN_PARAM cannot be used in the same parametrize call, because the tests names need to be unique.'
+    and: 'D:\\a\\pytest\\pytest\\.tox\\py315\\Lib\\site-packages\\pluggy\\_hooks.py:512: in __call__'
+    and: '    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)'
+    and: '           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^'
+    and: '    self._complain_multiple_hidden_parameter_sets()'
+    and: 'D:\\a\\pytest\\pytest\\.tox\\py315\\Lib\\site-packages\\_pytest\\python.py:1143: in _complain_multiple_hidden_parameter_sets'
+    and: '    fail('
+exact match: 'E   Failed: In test_multiple_hidden_param_is_forbidden.py::test_func: multiple instances of HIDDEN_PARAM cannot be used in the same parametrize call, because the tests names need to be unique.'
+nomatch: '*! Interrupted: 1 error during collection !*'
+    and: '=========================== short test summary info ==========================='
+    and: 'ERROR test_multiple_hidden_param_is_forbidden.py - Failed: In test_multiple_h...'
+    and: '!!!!!!!!!!!!!! CollectionInterrupted: 1 error during collection !!!!!!!!!!!!!!!'
+    and: '==================== no tests collected, 1 error in 0.08s ====================='
+remains unmatched: '*! Interrupted: 1 error during collection !*'
+XPASS testing/_py/test_local.py::TestLocalPath::test_make_numbered_dir_multiprocess_safe - #11603
+= 7 failed, 4456 passed, 145 skipped, 14 xfailed, 1 xpassed in 311.63s (0:05:11) =
+py315: exit 1 (312.96 seconds) D:\a\pytest\pytest> pytest --junitxml=junit.xml pid=8632
+  py315: FAIL code 1 (322.50=setup[9.54]+cmd[312.96] seconds)
+  evaluation failed :( (322.60 seconds)
+##[error]Process completed with exit code 1.

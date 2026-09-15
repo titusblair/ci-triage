@@ -1,0 +1,14 @@
+ * [new branch]        1.26.x      -> origin/1.26.x
+ * [new branch]        2.0.x       -> origin/2.0.x
+ * [new branch]        main        -> origin/main
+ * [new branch]        misleading-error-truncated-response -> origin/misleading-error-truncated-response
+ * [new branch]        release     -> origin/release
+ * [new branch]        v2          -> origin/v2
+ * [new tag]           0.3         -> 0.3
+test/test_wait.py::test_eintr[wait_for_socket] PASSED                    [ 71%]
+test/test_wait.py::test_eintr[select_wait_for_socket] PASSED             [ 71%]
+test/test_wait.py::test_eintr[poll_wait_for_socket] PASSED               [ 71%]
+nox > Command python -m coverage run --parallel-mode -m pytest --memray --hide-memray-summary -v -ra --tb=native --durations=10 --strict-config --strict-markers --disable-socket --allow-unix-socket --allow-hosts=localhost,127.0.0.1,::1,127.0.0.0,240.0.0.0 test/ failed with exit code -14
+nox > Session test-3.10 failed.
+test/test_wait.py::test_eintr_zero_timeout[wait_for_socket] 
+##[error]Process completed with exit code 1.

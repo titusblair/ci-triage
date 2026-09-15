@@ -1,0 +1,3 @@
+70 files skipped due to complete coverage.
+Coverage failure: total of 99 is less than fail-under=100
+##[error]Process completed with exit code 2.

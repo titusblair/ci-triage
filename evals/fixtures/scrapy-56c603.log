@@ -1,0 +1,26 @@
+   Building zope-interface @ git+https://github.com/zopefoundation/zope.interface@dd65a104ba9cbfc92b1b11f43f2624e3e1602ae7
+      Built twisted @ git+https://github.com/twisted/twisted@86f26338335cf21383a45241dbb6df5b3050afbd
+    Updated https://github.com/scrapy/protego (ddf86e95e4d5968f0b6e8e33ad1488ed4c12f908)
+error: Failed to build `aiohttp @ git+https://github.com/aio-libs/aiohttp@ce32557b72e75332589a51b309bd34bcb62989b5`
+  cause: The build backend returned an error
+  cause: Call to `setuptools.build_meta.build_wheel` failed (exit status: 1)
+         [stdout]
+         running bdist_wheel
+         warning: no previously-included files matching '*.hash' found anywhere in distribution
+         warning: no previously-included files found matching 'aiohttp/*.html'
+         no previously-included directories found matching 'docs/_build'
+         cc1: fatal error: aiohttp/_websocket/mask.c: No such file or directory
+         compilation terminated.
+         cc1: fatal error: aiohttp/_find_header.c: No such file or directory
+         compilation terminated.
+         cc1: fatal error: aiohttp/_http_writer.c: No such file or directory
+         compilation terminated.
+         cc1: fatal error: aiohttp/_websocket/reader_c.c: No such file or directory
+         compilation terminated.
+         error: Command '['gcc', '-fno-omit-frame-pointer', '-mno-omit-leaf-frame-pointer', '-fno-strict-overflow', '-Wsign-compare', '-DNDEBUG', '-g', '-O3', '-Wall', '-fPIC', '-I/home/runner/work/_temp/setup-uv-cache/builds-v0/.tmpuJtAl1/include', '-I/opt/hostedtoolcache/Python/3.15.0-rc.2/x64/include/python3.15', '-c', 'aiohttp/_websocket/mask.c', '-o', 'build/temp.linux-x86_64-cpython-315/aiohttp/_websocket/mask.o']' returned non-zero exit status 1.
+hint: Build failures usually indicate a problem with the package or the build environment
+vcs-deps: exit 1 (36.04 seconds) /home/runner/work/scrapy/scrapy> uv pip install --python /home/runner/work/scrapy/scrapy/.tox/vcs-deps/bin/python --no-deps --reinstall git+https://github.com/twisted/twisted git+https://github.com/python-pillow/Pillow git+https://github.com/MagicStack/uvloop git+https://github.com/aio-libs/aiohttp git+https://github.com/pyca/cryptography git+https://github.com/scrapy/cssselect git+https://github.com/tiran/defusedxml git+https://github.com/scrapy/itemadapter git+https://github.com/scrapy/itemloaders git+https://github.com/lxml/lxml git+https://github.com/pypa/packaging git+https://github.com/scrapy/parsel git+https://github.com/scrapy/protego git+https://github.com/pyca/pyopenssl git+https://github.com/scrapy/queuelib git+https://github.com/pyca/service-identity git+https://github.com/john-kurkowski/tldextract git+https://github.com/scrapy/w3lib git+https://github.com/zopefoundation/zope.interface git+https://github.com/boto/boto3 git+https://github.com/bpython/bpython git+https://github.com/google/brotli git+https://github.com/python-hyper/brotlicffi git+https://github.com/googleapis/python-storage 'git+https://github.com/pydantic/httpx2#subdirectory=src/httpx2' git+https://github.com/ipython/ipython git+https://github.com/prompt-toolkit/ptpython pid=12579
+.pkg: _exit> python /home/runner/work/scrapy/scrapy/.tox/.tox/lib/python3.15/site-packages/pyproject_api/_backend.py True hatchling.build
+  vcs-deps: FAIL code 1 (112.19=setup[76.15]+cmd[36.04] seconds)
+  evaluation failed :( (112.67 seconds)
+##[error]Process completed with exit code 1.

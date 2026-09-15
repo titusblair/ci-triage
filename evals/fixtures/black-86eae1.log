@@ -1,0 +1,38 @@
+  run-id: 31819286473
+  repository: psf/black
+  skip-decompress: false
+  digest-mismatch: error
+env:
+  PIP_UPLOADED_PRIOR_TO: P2D
+stable_artifact="${artifact_dir}/.stable.pr-comment.md"
+if [ ! -d "$artifact_dir" ]; then
+    echo "::error::Artifact directory does not exist: ${artifact_dir}"
+    exit 1
+fi
+while IFS= read -r -d '' entry; do
+    if [ "$(dirname "$entry")" != "$artifact_dir" ]; then
+        echo "::error::Unexpected nested artifact path: ${entry}"
+        exit 1
+    fi
+    case "$(basename "$entry")" in
+        .preview.pr-comment.md|.stable.pr-comment.md) ;;
+        *)
+            echo "::error::Unexpected artifact path: ${entry}"
+            exit 1
+            ;;
+    esac
+    if [ ! -f "$entry" ] || [ -L "$entry" ]; then
+        echo "::error::Artifact must be a regular file: ${entry}"
+        exit 1
+    fi
+done < <(find "$artifact_dir" -mindepth 1 -print0)
+for artifact in "$preview_artifact" "$stable_artifact"; do
+    if [ ! -f "$artifact" ] || [ -L "$artifact" ]; then
+        echo "::error::Missing expected artifact file: ${artifact}"
+        exit 1
+    fi
+done
+env:
+  PIP_UPLOADED_PRIOR_TO: P2D
+##[error]Artifact directory does not exist: /home/runner/work/_temp/diff-shades-artifacts
+##[error]Process completed with exit code 1.

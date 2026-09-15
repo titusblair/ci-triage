@@ -1,0 +1,6 @@
++ uv run ruff format --check --diff starlette tests benchmarks
+85 files already formatted
++ uv run mypy starlette tests benchmarks
+tests/middleware/test_base.py:1335: error: Incompatible types in assignment (expression has type "BaseHTTPMiddleware", variable has type "Starlette")  [assignment]
+Found 1 error in 1 file (checked 84 source files)
+##[error]Process completed with exit code 1.

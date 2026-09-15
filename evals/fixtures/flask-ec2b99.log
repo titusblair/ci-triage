@@ -1,0 +1,21 @@
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Using pre-commit with uv 0.12.0 via pre-commit-uv 4.3.0
+ruff check...............................................................Failed
+- hook id: ruff-check
+- files were modified by this hook
+Found 4 errors (4 fixed, 0 remaining).
+ruff format..............................................................Failed
+- hook id: ruff-format
+- files were modified by this hook
+     def ping():
+         return jsonify(status="ok", code=200)
+@@ -16,9 +17,10 @@ def test_jsonify_mimetype_and_content_type_invariance():
+         assert "application/json" in response.headers.get("Content-Type", "")
+         assert response.json == {"status": "ok", "code": 200}
++
+ def test_jsonify_empty_dictionary():
+     @app.route("/api/empty")
+     def empty():
+         return jsonify({})
+##[error]Process completed with exit code 1.

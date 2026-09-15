@@ -1,0 +1,28 @@
+{
+  "_note": "Real failed CI jobs from public repos, hand-labelled. Logs are saved as fixtures because GitHub expires them after 90 days and an eval that rots is not an eval.",
+  "_labels": "test_failure | lint | typecheck | dependency | compile | timeout | network | oom | permissions | config | flaky_candidate | no_diagnostic | unknown",
+  "cases": [
+    {"fixture": "flask-026ad8",      "label": "test_failure", "why": "pytest raised DeprecationWarning as an error"},
+    {"fixture": "flask-ec2b99",      "label": "lint",         "why": "formatter printed a unified diff"},
+    {"fixture": "requests-9bfc99",   "label": "lint",         "why": "pre-commit hook modified files"},
+    {"fixture": "requests-68544f",   "label": "config",       "why": "action input failed validation: github-token too long"},
+    {"fixture": "black-86eae1",      "label": "unknown",      "why": "project-specific digest-mismatch, no generic signal"},
+    {"fixture": "fastapi-91d914",    "label": "compile",      "why": "docker image build step failed"},
+    {"fixture": "fastapi-a0689e",    "label": "lint",         "why": "pre-commit hook modified files"},
+    {"fixture": "fastapi-fd9b53",    "label": "compile",      "why": "docker image build step failed"},
+    {"fixture": "fastapi-bc8f9c",    "label": "dependency",   "why": "dependabot updater job failed"},
+    {"fixture": "pytest-e033ff",     "label": "test_failure", "why": "a test asserts ABOUT pexpect TIMEOUT; not an infra timeout"},
+    {"fixture": "pytest-be168d",     "label": "test_failure", "why": "7 failed"},
+    {"fixture": "pytest-616e7c",     "label": "test_failure", "why": "doc example check failed"},
+    {"fixture": "starlette-0a3d0b",  "label": "unknown",      "why": "exit code 2 with no usable diagnostic"},
+    {"fixture": "starlette-81b626",  "label": "typecheck",    "why": "mypy: Incompatible types in assignment"},
+    {"fixture": "starlette-3fae6e",  "label": "typecheck",    "why": "mypy: Returning Any from function"},
+    {"fixture": "sqlalchemy-795742", "label": "network",      "why": "artifact upload failed, retry suggested"},
+    {"fixture": "sqlalchemy-303f93", "label": "dependency",   "why": "No matching distribution found for setuptools"},
+    {"fixture": "numpy-82f407",      "label": "test_failure", "why": "1 failed of 47230"},
+    {"fixture": "scrapy-56c603",     "label": "test_failure", "why": "tox session FAIL code 1"},
+    {"fixture": "urllib3-54dc69",    "label": "test_failure", "why": "1 failed"},
+    {"fixture": "urllib3-28a743",    "label": "test_failure", "why": "nox session failed"},
+    {"fixture": "urllib3-265bd9",    "label": "test_failure", "why": "1 failed"}
+  ]
+}
